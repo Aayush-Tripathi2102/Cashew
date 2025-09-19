@@ -9,4 +9,5 @@ export const {
   PRIVATE_KEY,
   SUBSCRIPTION_ADDRESS,
   USER_PRIVATE_KEY,
+  TOKEN_ADDRESS
 } = process.env;

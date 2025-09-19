@@ -5,6 +5,7 @@ import {
   RPC_URL,
   SUBSCRIPTION_ADDRESS,
   USER_PRIVATE_KEY,
+  TOKEN_ADDRESS,
 } from "../config/env.js";
 
 const provider = new ethers.JsonRpcProvider(RPC_URL);
@@ -30,18 +31,18 @@ const subscriptionManagerAbi = [
   "event Renewed(address indexed subscriber, uint256 indexed planId, uint256 nextBilling)",
   "event Cancelled(address indexed subscriber, uint256 indexed planId)",
 ];
+
+const tokenABI = [
+  "function balanceOf(address account) external view returns (uint256)",
+];
+
 const registry = new ethers.Contract(REGISTRY_ADDRESS, registryAbi, wallet);
-// const subscriptionManager = new ethers.Contract(
-//   SUBSCRIPTION_ADDRESS,
-//   subscriptionManagerAbi,
-//   wallet
-// );
 const subscriptionManagerAsUser = new ethers.Contract(
   SUBSCRIPTION_ADDRESS,
   subscriptionManagerAbi,
   userWallet
 );
-
+const token = new ethers.Contract(TOKEN_ADDRESS, tokenABI, wallet);
 export {
   provider,
   wallet,
@@ -50,4 +51,5 @@ export {
   registryAbi,
   subscriptionManagerAsUser,
   subscriptionManagerAbi,
+  token,
 };
