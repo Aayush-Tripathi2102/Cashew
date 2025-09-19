@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getBalance } from "@/lib/api";
 export async function GET(request: NextRequest) {
   try {
-    const response = await fetch("http://192.168.70.3:5000/api/v1/token/balance", {
+    const response = await fetch("https://cashew-7fqo.onrender.com/api/v1/token/balance", {
       cache: "no-store",
       method: "GET",
       headers: {

@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Make request to the backend API
-    const response = await fetch("http://192.168.70.3:5000/api/v1/plans", {
+    const response = await fetch("https://cashew-7fqo.onrender.com/api/v1/plans", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
