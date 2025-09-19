@@ -22,7 +22,7 @@ app.get("/auth", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on http://192.168.70.3:${PORT}`);
 });
 
 export default app;

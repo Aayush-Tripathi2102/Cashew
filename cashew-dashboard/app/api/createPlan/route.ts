@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Make request to the backend API
-    const response = await fetch("http://localhost:3000/api/v1/plans", {
+    const response = await fetch("http://192.168.70.3:5000/api/v1/plans", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
